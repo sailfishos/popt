@@ -1,0 +1,27 @@
+* Sun Jun 26 2011 Anas Nashif <anas.nashif@intel.com> - 1.16
+- Disable nls
+
+* Fri May 27 2011 Anas Nashif <anas.nashif@intel.com> - 1.16
+- Package docs/locale automatically
+
+* Thu Jun 24 2010 Yan Yin <yan.yin@intel.com> - 1.16
+- Update to 1.16
+
+* Tue Apr 28 2009 Vivian Zhang <vivian.zhang@intel.com> 1.15
+- Update to 1.15
+
+* Tue Dec 09 2008 Anas Nashif <anas.nashif@intel.com> 1.14
+- Cleanup install of static libraries
+
+* Tue Dec 09 2008 Anas Nashif <anas.nashif@intel.com> 1.14
+- Cleanup install of static libraries
+
+* Tue Dec 09 2008 Anas Nashif <anas.nashif@intel.com> 1.14
+- Cleanup file lists after removing static libraries
+
+* Fri Dec 05 2008 Arjan van de Ven <arjan@linux.intel.com> 1.14
+- Upgrade to version 1.13
+
+* Wed Jul 23 2008 Zhang Xin <Xing.Z.Zhang@intel.com>
+- Mark man file as %doc
+
