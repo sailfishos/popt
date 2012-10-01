@@ -1,3 +1,6 @@
+* Mon Oct 01 2012 Marko Saukko <marko.saukko@jollamobile.com> - 1.16
+- Contributing to MER#174, moving libs to /usr
+
 * Sun Jun 26 2011 Anas Nashif <anas.nashif@intel.com> - 1.16
 - Disable nls
 

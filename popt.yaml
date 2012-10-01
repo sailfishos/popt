@@ -21,7 +21,6 @@ PkgBR:
     - gettext
 Configure: configure
 ConfigOptions:
-    - --libdir=/%{_lib}
     - --disable-nls
 SubPackages:
     - Name: devel
