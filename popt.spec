@@ -16,6 +16,7 @@ License:    MIT
 URL:        http://www.rpm5.org/
 Source0:    http://www.rpm5.org/files/%{name}/%{name}-%{version}.tar.gz
 Source100:  popt.yaml
+Patch0:     popt-aarch64.patch
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  gettext
@@ -45,6 +46,7 @@ API documentation of the popt library, too.
 
 %prep
 %setup -q -n %{name}-%{version}
+%patch0 -p1
 
 # >> setup
 # << setup
