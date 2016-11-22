@@ -1,3 +1,6 @@
+* Mon Nov 21 2016 Andrew Branson <andrew.branson@jollamobile.com> - 1.16-2
+- [aarch64] Fix build for aarch64 support. Contributes JB#36790
+
 * Mon Oct 01 2012 Marko Saukko <marko.saukko@jollamobile.com> - 1.16
 - Contributing to MER#174, moving libs to /usr
 
