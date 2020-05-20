@@ -1,3 +1,6 @@
+* Wed May 20 2020 Niels Breet <niels.breet@jolla.com> - 1.16-3
+- [aarch64] Use libdir in pkgconfig. Contributes to JB#49681
+
 * Mon Nov 21 2016 Andrew Branson <andrew.branson@jollamobile.com> - 1.16-2
 - [aarch64] Fix build for aarch64 support. Contributes JB#36790
 
