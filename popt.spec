@@ -9,6 +9,7 @@ License:    MIT
 URL:        http://www.rpm5.org/
 Source0:    http://www.rpm5.org/files/%{name}/%{name}-%{version}.tar.gz
 Patch0:     001-popt-fix-build-automake-1.12.patch
+Patch1:     002-popt-1.16-pkgconfig.patch
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  gettext
@@ -37,8 +38,7 @@ API documentation of the popt library, too.
 
 
 %prep
-%setup -q -n %{name}-%{version}
-%patch0 -p1
+%autosetup -p1
 
 %build
 
