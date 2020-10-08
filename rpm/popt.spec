@@ -1,18 +1,15 @@
 Name:       popt
-
-
 Summary:    C library for parsing command line parameters
-Version:    1.16
-Release:    2
-Group:      System/Libraries
+Version:    1.18
+Release:    1
 License:    MIT
-URL:        http://www.rpm5.org/
-Source0:    http://www.rpm5.org/files/%{name}/%{name}-%{version}.tar.gz
-Patch0:     001-popt-fix-build-automake-1.12.patch
-Patch1:     002-popt-1.16-pkgconfig.patch
+URL:        https://github.com/rpm-software-management/popt/
+Source0:    %{name}-%{version}.tar.bz2
+BuildRequires:  autoconf
+BuildRequires:  libtool
+BuildRequires:  gettext
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
-BuildRequires:  gettext
 
 %description
 Popt is a C library for parsing command line parameters. Popt was
@@ -27,7 +24,6 @@ shell-like rules.
 
 %package devel
 Summary:    Development files for the popt library
-Group:      Development/Libraries
 Requires:   %{name} = %{version}-%{release}
 
 %description devel
@@ -36,26 +32,22 @@ for developing programs which use the popt C library. It contains the
 API documentation of the popt library, too.
 
 
-
 %prep
-%autosetup -p1
+%autosetup -p1 -n %{name}-%{version}/%{name}
 
 %build
+%reconfigure --disable-static --disable-nls
 
-autoreconf -fiv
-%configure --disable-static \
-    --disable-nls
-
-make %{?jobs:-j%jobs}
-
+%make_build
 
 %install
-rm -rf %{buildroot}
 %make_install
 
 # Multiple popt configurations are possible
 mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/popt.d
 
+%check
+make check
 
 %post -p /sbin/ldconfig
 
@@ -63,7 +55,7 @@ mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/popt.d
 
 %files
 %defattr(-,root,root,-)
-%doc COPYING
+%license COPYING
 %{_sysconfdir}/popt.d
 %{_libdir}/libpopt.so.*
 
@@ -71,6 +63,6 @@ mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/popt.d
 %defattr(-,root,root,-)
 %doc README
 %{_libdir}/libpopt.so
-%{_libdir}/pkgconfig/popt.pc
+%{_libdir}/pkgconfig/%{name}.pc
 %{_includedir}/popt.h
-%doc %{_mandir}/man3/popt.3*
+%{_mandir}/man3/popt.3*
