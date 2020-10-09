@@ -1,0 +1,3 @@
+[submodule "popt"]
+	path = popt
+	url = https://git.sailfishos.org/mirror/popt.git
